@@ -1,11 +1,11 @@
-10 minute average: 61 mph
-30 minute average: 55 mph
-45 minute average: 54 mph
-60 minute average: 52 mph
-90 minute average: 52 mph
-99 minute average: nn mph
-120 minute average: 49 mph
-160 minute average: 47 mph
-180 minute average: nn mph
+10-minute average: 61 mph
+30-minute average: 55 mph
+45-minute average: 54 mph
+60-minute average: 52 mph
+90-minute average: 52 mph
+99-minute average: nn mph
+120-minute average: 49 mph
+160-minute average: 47 mph
+180-minute average: nn mph
 error reading data from interface
-200 minute average: 43 mph
+200-minute average: 43 mph
