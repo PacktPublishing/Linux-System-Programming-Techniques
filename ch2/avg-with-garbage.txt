@@ -7,5 +7,5 @@
 120 minute average: 49 mph
 160 minute average: 47 mph
 180 minute average: nn mph
-error reading data
+error reading data from interface
 200 minute average: 43 mph
