@@ -1,0 +1,6 @@
+10 minute average: 61 mph
+30 minute average: 55 mph
+45 minute average: 54 mph
+60 minute average: 52 mph
+90 minute average: 52 mph
+99 minute average: nn mph
