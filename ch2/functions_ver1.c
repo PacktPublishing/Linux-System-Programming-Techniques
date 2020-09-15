@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        printf("Caught an error from funtcion one\n");
+        printf("Caught an error from function one\n");
         printf("Return with 1 from main - error\n");
         return 1;
     }
