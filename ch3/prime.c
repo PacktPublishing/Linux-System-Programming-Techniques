@@ -14,7 +14,11 @@ int isprime(long int number)
         }
     }
     if(prime == 1)
+    {
         return 1;
+    }
     else
+    {
         return 0;
+    }
 }
