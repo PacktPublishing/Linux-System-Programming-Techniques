@@ -14,7 +14,7 @@ clean:
 	rm area $(OBJS)
 
 install: area
-	install -g root -o root area /usr/local/bin/area
+	install -g root -o root area $(bindir)/area
 
 uninstall: $(bindir)/area
 	rm $(bindir)/area
