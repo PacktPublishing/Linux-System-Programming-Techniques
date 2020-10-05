@@ -1,7 +1,13 @@
 CC=gcc
 CFLAGS=-std=c99 -Wall -pedantic
 LIBS=-lm
+OBJS=area.o help.o rectangle.o triangle.o circle.o
+DEPS=area.h
 
-area: area.c area.h help.c rectangle.c triangle.c circle.c
-	$(CC) $(CLAGS) $(LIBS) area.c help.c rectangle.c \
-	triangle.c circle.c -o area
+area: $(OBJS)
+	$(CC) -o area $(OBJS) $(LIBS)
+
+area.o: $(DEPS)
+
+clean:
+	rm area $(OBJS)
