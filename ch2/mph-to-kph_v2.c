@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
 
 void printHelp(char progname[])
 {
-    printf("%s [-c] [-h]\n", progname);
-    printf(" -c continues even tough a non-numeric value "
-        "was detected in the input\n"
+    fprintf(stderr, "%s [-c] [-h]\n", progname);
+    fprintf(stderr, " -c continues even though a non-numeric " 
+        "value was detected in the input\n"
         " -h print help\n");
 }
