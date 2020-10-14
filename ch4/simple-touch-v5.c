@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    int error;
+    int errornum;
     char filename[MAX_LENGTH] = { 0 };
     if (argc != 2)
     {
@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
     strncat(filename, argv[1], sizeof(filename)-1);
     if ( creat(filename, 00644) == -1 )
     {
-        error = errno;
+        errornum = errno;
         fprintf(stderr, "Can't create file %s\n", filename);
-        fprintf(stderr, "%s\n", strerror(error));
+        fprintf(stderr, "%s\n", strerror(errornum));
         return 1;
     }
     return 0;
