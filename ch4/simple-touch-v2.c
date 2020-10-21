@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     strncat(filename, argv[1], MAX_LENGTH-1);
     if ( creat(filename, 00644) == -1 )
     {
-        fprintf(stderr, "Couldn't create file %s\n", filename);
+        fprintf(stderr, "Can't create file %s\n", filename);
         return 1;
     }
     return 0;
