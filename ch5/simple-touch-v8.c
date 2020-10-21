@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     strncat(filename, argv[1], sizeof(filename)-1);
-    
+
     /* Update the access and modification time */
     if ( utime(filename, NULL) == -1 )
     {
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
            something is wrong */
         else
         {
-            perror("Can't change filename");
+            perror("Can't update timestamp");
             return errno;
         }
     }
