@@ -4,7 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 
-void printHelp(char progname[]);
+void printHelp(FILE *stream, char progname[]);
 
 int main(int argc, char *argv[])
 {
@@ -18,13 +18,13 @@ int main(int argc, char *argv[])
         switch(opt)
         {
             case 'h':
-                printHelp(argv[0]);
+                printHelp(stdout, argv[0]);
                 return 0;
             case 'c':
                 cont = 1;
                 break;
             default:
-                printHelp(argv[0]);
+                printHelp(stderr, argv[0]);
                 return 1;
         }
     }
@@ -53,10 +53,10 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void printHelp(char progname[])
+void printHelp(FILE *stream, char progname[])
 {
-    fprintf(stderr, "%s [-c] [-h]\n", progname);
-    fprintf(stderr, " -c continues even though a non-numeric " 
+    fprintf(stream, "%s [-c] [-h]\n", progname);
+    fprintf(stream, " -c continues even though a non-numeric " 
         "value was detected in the input\n"
         " -h print help\n");
 }
