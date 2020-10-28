@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
                 "exist\n");
         else
             fprintf(stderr, "Unknown error\n");
-            printf("Hello");
         return 1;
     }
     return 0;
