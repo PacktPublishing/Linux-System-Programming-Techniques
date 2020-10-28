@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void printHelp(char progname[])
+void printHelp(FILE *stream, char progname[])
 {
-    printf("\nUsage: %s [-c] [-t] [-r] [-h]\n"
+    fprintf(stream, "\nUsage: %s [-c] [-t] [-r] [-h]\n"
         "-c calculates the area of a circle\n"
         "-t calculates the area of a triangle\n"
         "-r calculates the area of a rectangle\n"

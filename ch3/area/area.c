@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     /* Sanity check number of options */
     if (argc != 2)
     {
-        printHelp(argv[0]);
+        printHelp(stderr, argv[0]);
         return 1;
     }
     /* Parse command-line options */    
@@ -20,29 +20,29 @@ int main(int argc, char *argv[])
             case 'c':
                 if (circle() == -1)
                 {
-                    printHelp(argv[0]);
+                    printHelp(stderr, argv[0]);
                     return 1;
                 }
                 break;
             case 'r':
                 if (rectangle() == -1)
                 {
-                    printHelp(argv[0]);
+                    printHelp(stderr, argv[0]);
                     return 1;
                 }
                 break;
             case 't':
                 if (triangle() == -1)
                 {
-                    printHelp(argv[0]);
+                    printHelp(stderr, argv[0]);
                     return 1;
                 }
                 break;
            case 'h':
-                printHelp(argv[0]);
+                printHelp(stdout, argv[0]);
                 return 0;
             default:
-                printHelp(argv[0]);
+                printHelp(stderr, argv[0]);
                 return 1;
         }
     }

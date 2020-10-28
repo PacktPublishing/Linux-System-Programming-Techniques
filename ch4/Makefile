@@ -1,2 +1,2 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -std=c99
+CFLAGS=-Wall -Wextra -pedantic -std=c99

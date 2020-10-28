@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=c99 -Wall -pedantic
+CFLAGS=-std=c99 -Wall -Wextra -pedantic
 LIBS=-lm
 OBJS=area.o help.o rectangle.o triangle.o circle.o
 DEPS=area.h
