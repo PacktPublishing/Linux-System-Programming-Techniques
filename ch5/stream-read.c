@@ -11,17 +11,17 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    /* open file with write mode */
-    if ( (fp = fopen(argv[1], "w")) == NULL )
+    /* open file with read mode */
+    if ( (fp = fopen(argv[1], "r")) == NULL )
     {
-        perror("Can't open file for writing");
+        perror("Can't open file for reading");
         return 1;
     } 
     
-    /* loop over each line and write it to the file */
-    while(fgets(linebuf, sizeof(linebuf), stdin) != NULL)
+    /* loop over each line and write it to stdout */
+    while(fgets(linebuf, sizeof(linebuf), fp) != NULL)
     {
-        fprintf(fp, linebuf);
+        printf("%s", linebuf);
     }
     fclose(fp); /* close the stream */
     return 0;
