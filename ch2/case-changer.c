@@ -22,6 +22,8 @@ int main(void)
             }
         }
         printf("%s\n", newcase);
+        /* zero out the arrays so there are no
+           left-overs in the next run */
         memset(c, 0, sizeof(c));
         memset(newcase, 0, sizeof(newcase));
     }
