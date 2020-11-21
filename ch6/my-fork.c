@@ -31,7 +31,7 @@ int main(void)
     else if(pid > 0)
     {
         /* In the parent we must wait for the child
-           to exit with waitpid(). Afterwards, the
+           to exit with waitpid(). Afterward, the
            child exit status is written to 'status' */
         waitpid(pid, &status, 0);
         printf("Child executed with PID %d\n", pid);
