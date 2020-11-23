@@ -42,7 +42,14 @@ int main(void)
         perror("Can't open daemonfile");
         return 1;
     }
-    
+    /* from here, we don't need stdin, stdout or, stderr
+       anymore, so let's close them all */
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
+    fclose(stdin);
+    fclose(stdout);
+    fclose(stderr);
     /* here we start the daemons "work" */
     for (;;)
     {
