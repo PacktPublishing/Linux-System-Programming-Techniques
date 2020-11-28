@@ -22,5 +22,5 @@ int main(void)
         si.procs);
     printf("This process ID is %d\n", getpid());
     printf("The parent process ID is %d\n", getppid());
-    _exit(0);
+    return 0;
 }
