@@ -1,0 +1,9 @@
+[Unit]
+Description=A small daemon for testing
+[Service]
+ExecStart=/usr/local/sbin/my-daemon
+Restart=on-failure
+Type=forking
+PIDFile=/var/run/my-daemon.pid
+[Install]
+WantedBy=multi-user.target
