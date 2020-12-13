@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         return errno;
     }
     printf("Inode: %lu\n", filestat.st_ino);
-    printf("Size: %ld\n", filestat.st_size);
+    printf("Size: %zd\n", filestat.st_size);
     printf("Links: %lu\n", filestat.st_nlink);
     return 0;
 }
