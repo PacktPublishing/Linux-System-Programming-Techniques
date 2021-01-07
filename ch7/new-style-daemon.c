@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -9,10 +10,17 @@ void sigHandler(int sig);
 int main(void)
 {
     time_t now; /* for the current time */
+    struct sigaction action; /* for sigaction */
+
+    /* prepare for sigaction */
+    action.sa_handler = sigHandler;
+    sigfillset(&action.sa_mask);
+    action.sa_flags = SA_RESTART;
+
     /* register the signal handler */
-    signal(SIGUSR1, sigHandler);
-    signal(SIGTERM, sigHandler);
-    signal(SIGHUP, sigHandler);
+    sigaction(SIGTERM, &action, NULL);
+    sigaction(SIGUSR1, &action, NULL);
+    sigaction(SIGHUP, &action, NULL);
 
     for (;;) /* main loop */
     {
@@ -41,6 +49,4 @@ void sigHandler(int sig)
         printf("HUP is used to reload any " 
             "configuration files\n");
     }
-    /* re-register the signal that was triggered */
-    signal(sig, sigHandler);
 }

@@ -1,7 +1,7 @@
 [Unit]
 Description=A small daemon for testing
 [Service]
-ExecStart=/usr/local/sbin/my-daemon
+ExecStart=/usr/local/sbin/my-daemon-v2
 Restart=on-failure
 Type=forking
 PIDFile=/var/run/my-daemon.pid

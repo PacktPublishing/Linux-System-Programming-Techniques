@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -5,13 +6,21 @@
 #include <sys/stat.h>
 #include <time.h>
 #include <fcntl.h>
+#include <signal.h>
+
+void sigHandler(int sig);
+
+/* moved these variables to the global scope
+   since they need to be access/deleted/closed
+   from the signal handler */
+FILE *fp;
+const char pidfile[] = "/var/run/my-daemon.pid";
 
 int main(void)
 {
     pid_t pid;
-    FILE *fp;
     time_t now; /* for the current time */
-    const char pidfile[] = "/var/run/my-daemon.pid";
+    struct sigaction action; /* for sigaction */
     const char daemonfile[] = "/tmp/my-daemon-is-alive.txt";
 
     if ( (pid = fork()) == -1 )
@@ -23,9 +32,11 @@ int main(void)
     {
         exit(0);
     }
-    /* the parent process has exited, so this is the child.
-    create a new session to lose the controlling terminal */
-    setsid();
+
+    /* the parent process has exited, which makes the rest of
+       the code the child process */
+    setsid(); /* create a new session to lose the controlling
+                 terminal */
     
     /* fork again, creating a grandchild, the actual daemon */
     if ( (pid = fork()) == -1 )
@@ -65,6 +76,16 @@ int main(void)
     open("/dev/null", O_WRONLY); /* 1 = stdout */
     open("/dev/null", O_RDWR); /* 2 = stderr */
 
+    /* prepare for sigaction */
+    action.sa_handler = sigHandler;
+    sigfillset(&action.sa_mask);
+    action.sa_flags = SA_RESTART;
+    /* register the signals we want to handle */
+    sigaction(SIGTERM, &action, NULL);
+    sigaction(SIGINT, &action, NULL);
+    sigaction(SIGQUIT, &action, NULL);
+    sigaction(SIGABRT, &action, NULL);
+
     /* here we start the daemons "work" */
     for (;;)
     {
@@ -76,4 +97,24 @@ int main(void)
         sleep(30);
     }
     return 0;
+}
+
+void sigHandler(int sig)
+{
+    int status = 0;
+    if ( sig == SIGTERM || sig == SIGINT 
+        || sig == SIGQUIT 
+        || sig == SIGABRT )
+    {
+        /* remove the pid-file */
+        if ( (unlink(pidfile)) == -1 )
+            status = 1;
+        if ( (fclose(fp)) == EOF )
+            status = 1;
+        exit(status); /* exit with the status set */
+    }
+    else /* some other signal */
+    {
+        exit(1);
+    }
 }
