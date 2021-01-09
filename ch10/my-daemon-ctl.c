@@ -17,8 +17,7 @@ int main(int argc, char *argv[])
    char procpath[PATH_MAX] = { 0 };
    char cmdline[PATH_MAX] = { 0 };
    const char pidfile[] = "/var/run/my-daemon.pid";
-   const char daemonPath[] = 
-      "/usr/local/sbin/my-daemon-v2";
+   const char daemon[] = "my-daemon-v2";
 
    /* Parse command-line options */
    while ((opt = getopt(argc, argv, "kh")) != -1)
@@ -39,7 +38,8 @@ int main(int argc, char *argv[])
 
    if ( (fp = fopen(pidfile, "r")) == NULL )
    {
-      perror("Can't open PID-file");
+      perror("Can't open PID-file (daemon isn't "
+         "running?)");
       return 1;
    }
    fscanf(fp, "%d", &pid); /* read the pid */
@@ -51,18 +51,17 @@ int main(int argc, char *argv[])
    if ( (procfp = fopen(procpath, "r")) == NULL )
    {
       perror("Can't open /proc path"
-         " (no /proc?)");
+         " (no /proc or wrong PID?)");
       return 1;
    }
    /* read the cmd line path from proc */
    fscanf(procfp, "%s", cmdline); 
 
-   /* check that the PID matches the cmdline */
-   if ( (strncmp(cmdline, daemonPath, PATH_MAX)) 
-      != 0 )
+   /* check the PID against the cmd line */
+   if ( (strstr(cmdline, daemon)) == 0 )
    {
       fprintf(stderr, "PID %d doesn't belong "
-         "to %s\n", pid, daemonPath);
+         "to %s\n", pid, daemon);
       return 1;
    }
 
@@ -71,19 +70,19 @@ int main(int argc, char *argv[])
       if ( (kill(pid, SIGTERM)) == 0 )
       {
          printf("Successfully terminated " 
-            "my-daemon-v2\n");
+            "daemon\n");
       }
       else
       {
-         perror("Couldn't terminate my-daemon-v2");
+         perror("Couldn't terminate daemon");
          return 1;
       }
         
    }
    else
    {
-      printf("The daemon is running with PID %d\n", 
-         pid);
+      printf("The daemon is running with PID %d " 
+         "and cmdline %s\n", pid, cmdline);
    }
    return 0;
 }
