@@ -25,6 +25,6 @@ int main(int argc, char *argv[])
 void printhelp(char progname[])
 {
     printf("%s integer ...\n", progname);
-    printf("This program takes any number of integer values"
-    " and sums them up\n");
+    printf("This program takes any number of " 
+        "integer values and sums them up\n");
 }

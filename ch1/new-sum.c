@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
             case 'h': /* -h for help */
                 printhelp(argv[0]);
                 return 0;
-            default: /* in case of invalid options */
+            default: /* in case of invalid options*/
                 printhelp(argv[0]);
                 return 1;
         }
@@ -47,7 +47,7 @@ void printhelp(char progname[])
     printf("%s [-s] [-m] integer ...\n", progname);
     printf("-s sums all the integers\n"
         "-m multiplies all the integers\n"
-        "This program takes any number of integer values"
-        " and either add or multiply them.\n"
+        "This program takes any number of integer "
+        "values and either add or multiply them.\n"
         "For example: %s -m 5 5 5\n", progname);
 }
