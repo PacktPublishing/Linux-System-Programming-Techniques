@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
     struct group *groupinfo;
     if ( argc != 2 )
     {
-        fprintf(stderr, "Usage: %s <file>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <file>\n", 
+            argv[0]);
         return 1;
     }
     if ( stat(argv[1], &filestat) == -1 )
