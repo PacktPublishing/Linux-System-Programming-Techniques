@@ -46,5 +46,5 @@ int main(void)
    /* clean up */
    munmap(addr, DATASIZE);
    shm_unlink(memid);
-	return 0;
+   return 0;
 }
