@@ -22,7 +22,7 @@ int main(void)
    if (addr == MAP_FAILED)
    {
       perror("mmap");
-      return 30;
+      return 1;
    }
     
    memcpy(addr, startmsg, strlen(startmsg) + 1);
