@@ -6,33 +6,35 @@
 
 int main(void)
 {
-    pid_t pid;
-    int status;
-    printf("My PID is %d\n", getpid());
-    /* fork, save the PID, and check for errors */
-    if ( (pid = fork()) == -1 )
-    {
-        perror("Can't fork");
-        return 1;
-    }
-    if (pid == 0)
-    {
-        /* if pid is 0 we are in the child process */
-        printf("Hello and goodbye from the child!\n");
-        exit(0);
-    }
-    else if(pid > 0)
-    {
-        /* if pid is greater than 0 we are in the parent */
-        printf("Hello from the parent process! "
-            "My child had PID %d\n", pid);
-        waitpid(pid, &status, 0); /* wait for the child */
-        sleep(120);
-    }
-    else
-    {
-        fprintf(stderr, "Something went wrong forking\n");
-        return 1;
-    }
-    return 0;
+   pid_t pid;
+   int status;
+   printf("My PID is %d\n", getpid());
+   /* fork, save the PID, and check for errors */
+   if ( (pid = fork()) == -1 )
+   {
+      perror("Can't fork");
+      return 1;
+   }
+   if (pid == 0)
+   {
+      /* if pid is 0 we are in the child process */
+      printf("Hello and goodbye from the child!\n");
+      exit(0);
+   }
+   else if(pid > 0)
+   {
+      /* if pid is greater than 0 we are in 
+       * the parent */
+      printf("Hello from the parent process! "
+         "My child had PID %d\n", pid);
+      waitpid(pid, &status, 0); /* wait for child */
+      sleep(120);
+   }
+   else
+   {
+      fprintf(stderr, "Something went wrong "
+         "forking\n");
+      return 1;
+   }
+   return 0;
 }
