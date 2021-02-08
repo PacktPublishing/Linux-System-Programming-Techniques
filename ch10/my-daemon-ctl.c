@@ -42,7 +42,14 @@ int main(int argc, char *argv[])
          "running?)");
       return 1;
    }
-   fscanf(fp, "%d", &pid); /* read the pid */
+   /* read the pid (and check if we could read an 
+    * integer) */
+   if ( (fscanf(fp, "%d", &pid)) != 1 )
+   {
+      fprintf(stderr, "Can't read PID from %s\n", 
+         pidfile);
+      return 1;
+   }
 
    /* build the /proc path */
    sprintf(procpath, "/proc/%d/cmdline", pid);
