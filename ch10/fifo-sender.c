@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
 void cleanUp(int signum)
 {
-   if (signum == 13) /* SIGPIPE */
+   if (signum == SIGPIPE)
       printf("The receiver stopped receiving\n");
    else
       printf("Aborting...\n");
