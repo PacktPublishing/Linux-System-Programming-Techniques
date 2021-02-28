@@ -46,12 +46,12 @@ int main(void)
 
 void *add(void *arg)
 {
-   long long int j;
-   for (j = 1; j < 1000000000; j++)
+   long long int j = 1;
+   while(j < 1000000000)
    {
-      /* we don't do any work in the loop, we wait
-       * until it's ready to update i */
+      j = j + 1;
    }
+
    pthread_mutex_lock(&i_mutex);
    i = i + j;
    pthread_mutex_unlock(&i_mutex);
