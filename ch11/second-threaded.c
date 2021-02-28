@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
    pthread_attr_init(&threadattr);
    pthread_create(&tid_progress, &threadattr, 
       progress, NULL);  
+   pthread_detach(tid_progress);
    pthread_create(&tid_prime1, &threadattr, 
       isprime, &number1);
    pthread_create(&tid_prime2, &threadattr, 
@@ -50,6 +51,9 @@ int main(int argc, char *argv[])
          number2);
    
    pthread_attr_destroy(&threadattr);
+   if ( pthread_cancel(tid_progress) != 0 )
+      fprintf(stderr, 
+         "Couldn't cancel progress thread\n");
   
    return 0;
 }

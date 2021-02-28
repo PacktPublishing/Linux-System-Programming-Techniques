@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
    number2 = atoll(argv[2]);
    pthread_attr_init(&threadattr);
    pthread_create(&tid_progress, &threadattr, 
-      progress, NULL);  
+      progress, NULL);
+   pthread_detach(tid_progress);
    pthread_create(&tid_prime1, &threadattr, 
       isprime, &number1);
    pthread_create(&tid_prime2, &threadattr, 
@@ -32,6 +33,9 @@ int main(int argc, char *argv[])
    pthread_join(tid_prime1, NULL);
    pthread_join(tid_prime2, NULL);
    pthread_attr_destroy(&threadattr);
+   if ( pthread_cancel(tid_progress) != 0 )
+      fprintf(stderr, 
+         "Couldn't cancel progress thread\n");
    printf("Done!\n");
    return 0;
 }
