@@ -1,2 +1,3 @@
 # Linux System Programming Techniques
-Linux System Programming Techniques: Gain proficiency in Linux system programming using the best recipes & techniques
+Linux System Programming Techniques: Become a proficient Linux system 
+programmer using expert recipes and techniques
