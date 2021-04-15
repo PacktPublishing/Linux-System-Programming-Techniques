@@ -17,7 +17,7 @@ This book covers the following exciting features:
 * Explore advanced topics such as filesystem operations, creating shared libraries, and debugging your programs
 * Gain an overall understanding of how to debug your programs using Valgrind
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1-789-95128-3) today!
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789951283) today!
 
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
@@ -30,8 +30,8 @@ The code will look like the following:
 #include <stdio.h>
 int main(void)
 {
-printf("Hello, world!\n");
-return 0;
+    printf("Hello, world!\n");
+    return 0;
 }
 ```
 
@@ -39,11 +39,6 @@ return 0;
 This book is for anyone who wants to develop system programs for Linux and gain a deeper understanding of the Linux system. The book is beneficial for anyone who is facing issues related to a particular part of Linux system programming and is looking for specific recipes or solutions.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-12).
-
-### Software and Hardware List
-| Chapter | Software required | OS required |
-| -------- | ------------------------------------ | ----------------------------------- |
-| 1-12 | Oracle VirtualBox 6.1 | Windows and Linux (Any) |
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](http://www.packtpub.com/sites/default/files/downloads/9781789951288_ColorImages.pdf).
 
