@@ -43,7 +43,7 @@ int main(void)
 ### Code in Action
 Click on following link to see the Code in Action:
 
-[Youtube link](https://bit.ly/3fGDp8v)
+[Youtube link](https://bit.ly/39ovGd6)
 
 **Following is what you need for this book:**
 This book is for anyone who wants to develop system programs for Linux and gain a deeper understanding of the Linux system. The book is beneficial for anyone who is facing issues related to a particular part of Linux system programming and is looking for specific recipes or solutions.
