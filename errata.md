@@ -5,7 +5,7 @@ error. I will then confirm it and add it to this document.
 
 ## Linked libraries should come after the file
 This error affects readers using Ubuntu and was reported by [Stan
-(who8mypnuts)](https://github.com/who8mypnuts).
+(who8mypnuts)](https://github.com/who8mypnuts) in [issue 1](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/issues/1).
 
 Ubuntu (and possibly other distributions) has added the flag `--as-needed` as
 a default for the linker. The reason for using `--as-needed` is to avoid
@@ -72,7 +72,7 @@ should be:
     $> gcc -Wall -Wextra -pedantic -std=c99 \
     > temperature-v2.c -o temperature-v2 -lconvert
 
-### Page 269, step 2:
+### Page 269, step 3:
 
     $> gcc -Wall -Wextra -pedantic -std=c99 -static \
     > temperature-v2.c -lconvert -o temperature-static
