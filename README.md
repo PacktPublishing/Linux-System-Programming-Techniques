@@ -6,6 +6,9 @@ This is the code repository for [Linux System Programming Techniques](https://ww
 
 **Linux System Programming Techniques,  published by Packt**
 
+## Errata
+An up-to-date errata can be found [here](errata.md). Please review this document if you encounter any problems!
+
 ## What is this book about?
 Linux is the world's most popular open-source operating system. Linux system programming is all about developing system programs for Linux and Unix operating systems. 
 It enables you to extend the Linux operating system with your own system programs and to communicate with other programs on the system. The book begins by exploring the GCC compiler, a C program, the shell, the built-in manual pages, and Linux system calls.
@@ -34,11 +37,6 @@ int main(void)
     return 0;
 }
 ```
-### Software and Hardware List
-| Chapter | Software required | OS required |
-| -------- | ------------------------------------ | ----------------------------------- |
-| 1-7 | Ubuntu 18.04 LTS | Windows, Mac OS X, and Linux (Any) |
-| 1-7 | Oracle VirtualBox 6.x | Windows, Mac OS X, and Linux (Any) |
 
 ### Code in Action
 Click on following link to see the Code in Action:

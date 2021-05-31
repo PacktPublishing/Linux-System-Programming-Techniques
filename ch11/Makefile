@@ -1,2 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -std=c99 -lpthread
+CFLAGS=-Wall -Wextra -pedantic -std=c99
+LDFLAGS=-lpthread
+%: %.c
+	$(CC) $< $(CFLAGS) -o $@ $(LDFLAGS)
