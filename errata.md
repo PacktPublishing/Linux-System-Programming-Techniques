@@ -4,11 +4,11 @@ find an error in the book, please open an issue here on GitHub and describe the
 error. I will then confirm it and add it to this document.
 
 ## Linked libraries should come after the file
-This error affects readers using Ubuntu and was reported by [Stan
+**This issue has been fixed in the book as of June/July 2021!**
+
+The error affects readers using Ubuntu and was reported by [Stan
 (who8mypnuts)](https://github.com/who8mypnuts) in [issue
 1](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/issues/1).
-
-**The issue has been fixed in the book as of June/July 2021.**
 
 Ubuntu (and possibly other distributions) has added the flag `--as-needed` as
 a default for the linker. The reason for using `--as-needed` is to avoid
