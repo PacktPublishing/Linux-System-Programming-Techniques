@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B13043?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Linux System Programming Techniques
 
 <a href="https://www.packtpub.com/product/linux-system-programming-techniques/9781789951288#:~:text=About%20this%20book&text=It%20enables%20you%20to%20extend,pages%2C%20and%20Linux%20system%20calls.?utm_source=github&utm_medium=repository&utm_campaign=9781789951288"><img src="https://static.packt-cdn.com/products/9781789951288/cover/smaller" alt="Linux System Programming Techniques" height="256px" align="right"></a>
