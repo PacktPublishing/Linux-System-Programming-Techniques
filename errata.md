@@ -11,3 +11,15 @@ book.
 
 For the correct code, please see
 [create-zombie.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch6/create-zombie.c).
+
+## Wrong version of my-daemon-ctl.c in the book
+The book contains the wrong version of the program `my-daemon-ctl.c` on pages
+295 to 298. The correct, working version is listed here on Github in
+chapter 10, filename
+[my-daemon-ctl.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch10/my-daemon-ctl.c).
+
+The most important difference between the versions is that the path to
+`my-daemon-v2` is hard coded in the book in `const char daemonPath[]`, which it
+shouldn't be.
+
+
