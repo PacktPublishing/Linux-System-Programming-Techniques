@@ -14,7 +14,7 @@ int main(void)
          termsize.ws_row);
       printf("Width: %d columns\n", 
          termsize.ws_col);
-      sleep(0.1);
+      sleep(0);
    }
    return 0;
 }
