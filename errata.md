@@ -3,6 +3,37 @@ This is the official errata for Linux System Programming Techniques. If you
 find an error in the book, please open an issue here on GitHub and describe the
 error. I will then confirm it and add it to this document.
 
+## Missing function code on page 32
+In the code listing for `functions_ver2.c` on page 32, the code for the
+function `func2()` is missing.
+
+The correct code is found on GitHub. Please see
+[functions_ver2.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch2/functions_ver2.c).
+
+## Missing curly braces on page 108
+On page 108, where the code for `area.c` ends, the code listing is missing
+two curly braces and a `return 0;`. However, the code on GitHub is correct,
+please see
+[area.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch3/area/area.c).
+
+## Page 162
+In point 8,9 and 10 (page 163), the regular Linux `chmod`-command is used to
+set permissions, although it should be the self-created `my-chmod`-command.
+
+## Page 169, How it works
+The sentence *A file descriptor is just an integer, just as 0, 1, and 3 are
+stdin, stdout, and stderr* should be *A file descriptor is just an integer,
+just as 0, 1, and 2 are stdin, stdout, and stderr*
+
+## fprintf on page 175
+The code i`fprintf(fp, linebuf);` in the recipe works, but is not safe. If the
+input text contains a format operator, like `%s` the output will be incorrect.
+
+Instead, the correct code should be `fprintf(fp, "%s", linebuf);`. 
+
+For the corect program, see
+[stream-write.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch5/stream-write.c).
+
 ## Missing 'else if' on page 213
 *This error have been corrected in the e-book, but not yet in the printed
 book.*

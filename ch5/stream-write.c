@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
    while(fgets(linebuf, sizeof(linebuf), stdin) 
       != NULL)
    {
-      fprintf(fp, linebuf);
+      fprintf(fp, "%s", linebuf);
    }
    fclose(fp); /* close the stream */
    return 0;
