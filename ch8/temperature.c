@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
     else if ( strcmp(argv[1], "-k") == 0  )
     {
-        printf("%.1f C = %.1f F\n", 
+        printf("%.1f C = %.1f K\n", 
             atof(argv[2]), c_to_k(atof(argv[2])));
     }
     else

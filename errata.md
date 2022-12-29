@@ -46,6 +46,30 @@ book.
 For the correct code, please see
 [create-zombie.c](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/blob/master/ch6/create-zombie.c).
 
+## Missing lines on page 227
+The code for `my-daemon-v2.c` on page 227 is missing the following lines at
+the top of the code: 
+
+```
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+```
+
+The code on GitHub is correct though.
+
+## Page 258, wrong temperature symbol
+On page 258, the code uses the wrong temperature symbol. Line 22 should read
+`printf("%.1f C = %.1f K\n",` instead of `printf("%.1f C = %.1f F\n",`.
+
+The same goes for the example in step 3 on page 259; it should read `15.0 C =
+288.1 K`.
+
+## Page 278, the sending user must also set mesg y
+On page 278, in step 7 and 8, the sending user must also allow messages with
+`mesg y` before they can send a message using `write`.
+
 ## Wrong version of my-daemon-ctl.c in the book
 *This error have been corrected in the e-book, but not yet in the printed
 book.*
