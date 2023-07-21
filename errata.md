@@ -92,3 +92,21 @@ prevent system exhaustion. A big thank you to [zhenya4880](https://github.com/zh
 for pointing this out in [issue 3](https://github.com/PacktPublishing/Linux-System-Programming-Techniques/issues/3).
 
 The code on Github is updated with `sleep(0)`.
+
+## Page 305/306
+The `#include <unistd.h>` appears twice. It should only appear once.
+
+## Page 308, point 9
+The text says *CTRL+P*. It should be *CTRL+C*.
+
+## Page 317
+The program `msg-receiever` has been accidentally been named `msg-reveiver`.
+
+## Page 318, the See also section
+`man 3 mq_recevie` should be `man 3 mq_receive`.
+
+## Page 396
+When compiling `overflow.c`, the compiler already throws a overflow warning,
+although it creates the executable. This should be mentioned in
+the book.
+
