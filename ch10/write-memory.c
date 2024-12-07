@@ -21,8 +21,8 @@ int main(void)
       return 1;
    }
 
-	/* truncate memory to DATASIZE */
-	if ( (ftruncate(fd, DATASIZE)) == -1 )
+   /* truncate memory to DATASIZE */
+   if ( (ftruncate(fd, DATASIZE)) == -1 )
    {
       perror("Can't truncate memory");
       return 1;
