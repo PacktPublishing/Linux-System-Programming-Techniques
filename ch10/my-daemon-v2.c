@@ -37,7 +37,10 @@ int main(void)
        the code the child process */
     setsid(); /* create a new session to lose the controlling
                  terminal */
-    
+
+    umask(022); /* reset the umask to something sensible */
+    chdir("/"); /* change working directory to / */
+
     /* fork again, creating a grandchild, the actual daemon */
     if ( (pid = fork()) == -1 )
     {
@@ -52,14 +55,12 @@ int main(void)
         {
             perror("Can't open file for writing");
             return 1;
-        } 
+        }
         fprintf(fp, "%d\n", pid); /* write pid to file */
         fclose(fp); /* close the file pointer */
         exit(0);
     }
 
-    umask(022); /* reset the umask to something sensible */
-    chdir("/"); /* change working directory to / */
     /* open the "daemonfile" for writing */
     if ( (fp = fopen(daemonfile, "w")) == NULL )
     {
@@ -102,8 +103,8 @@ int main(void)
 void sigHandler(int sig)
 {
     int status = 0;
-    if ( sig == SIGTERM || sig == SIGINT 
-        || sig == SIGQUIT 
+    if ( sig == SIGTERM || sig == SIGINT
+        || sig == SIGQUIT
         || sig == SIGABRT )
     {
         /* remove the pid-file */
